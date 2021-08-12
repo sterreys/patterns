@@ -1,0 +1,18 @@
+
+def bfs(node):
+
+    captured[node] = 1
+    visted[node] = 1
+    parent[node] = 0
+
+    q = [node]
+    while len(q) != 0:
+        v = q.pop()
+        captured[v] = 1
+        for w in graph[v]:
+            if visited[w] == 0:
+                visited[w] = 1
+                parent[w] = v
+                q.append(w)
+
+
